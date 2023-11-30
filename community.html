@@ -1,0 +1,140 @@
+<!-- community.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Communauté</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style/styleC.css">
+
+
+
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <button class="btn return-home"><i class="fas fa-home"></i></button>
+        <button class="btn" onclick="window.location.href='create-announcement.html'">Ajouter une annonce</button>
+        <h2>Communauté</h2>
+    </div>
+
+    <div id="announcementsList" class="announcements-list">
+        <!-- Announcement cards will be dynamically added here -->
+    </div>
+</div>
+
+<div class="toolbar">
+    <button class="btn"><i class="fas fa-user"></i></button>
+    <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
+    <button class="btn"><i class="fas fa-trophy"></i></button>
+    <button class="btn"><i class="fas fa-cog"></i></button>
+</div>
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- Your existing HTML code... -->
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Retrieve stored announcements
+        var announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+
+        // Get the announcementsList container
+        var announcementsList = document.getElementById('announcementsList');
+
+        // Loop through announcements and create cards
+        announcements.forEach(function (announcement) {
+            var card = document.createElement('div');
+            card.className = 'card mb-3';
+
+            var cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            // Add announcement details to the card
+            cardBody.innerHTML = `
+                <h5 class="card-title">${announcement.address}</h5>
+                <p class="card-text">Date: ${announcement.dateTime}</p>
+                <p class="card-text">Participants: ${announcement.participants}</p>
+                <p class="card-text">Description: ${announcement.description}</p>
+                <p class="card-text">Sport: ${announcement.sport}</p>
+                <button class="btn btn-primary" onclick="joinEvent('${announcement.address}')">Participer</button>
+            `;
+
+            card.appendChild(cardBody);
+            announcementsList.appendChild(card);
+        });
+    });
+
+    // Function to handle participation
+// Function to handle participation
+function joinEvent(address) {
+        // Retrieve stored announcements
+        var announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+
+        // Find the announcement with the specified address
+        var announcement = announcements.find(function (a) {
+            return a.address === address;
+        });
+
+        if (announcement) {
+            // Increment the number of participants
+            announcement.participants++;
+
+            // Update local storage
+            localStorage.setItem('announcements', JSON.stringify(announcements));
+
+            // You may also want to update the UI to reflect the new participant count
+            updateAnnouncementUI();
+        } else {
+            console.error('Announcement not found:', address);
+        }
+    }
+
+    // Function to update the UI with the latest announcements
+    function updateAnnouncementUI() {
+        // Get the announcementsList container
+        var announcementsList = document.getElementById('announcementsList');
+
+        // Clear existing content
+        announcementsList.innerHTML = '';
+
+        // Retrieve stored announcements
+        var announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+
+        // Loop through announcements and create cards
+        announcements.forEach(function (announcement) {
+            var card = document.createElement('div');
+            card.className = 'card mb-3';
+
+            var cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            // Add announcement details to the card
+            cardBody.innerHTML = `
+                <h5 class="card-title">${announcement.address}</h5>
+                <p class="card-text">Date: ${announcement.dateTime}</p>
+                <p class="card-text">Participants: ${announcement.participants}</p>
+                <p class="card-text">Description: ${announcement.description}</p>
+                <p class="card-text">Sport: ${announcement.sport}</p>
+                <button class="btn btn-primary" onclick="joinEvent('${announcement.address}')">Participer</button>
+            `;
+
+            card.appendChild(cardBody);
+            announcementsList.appendChild(card);
+        });
+    }
+</script>
+
+</body>
+</html>
+

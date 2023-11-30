@@ -1,0 +1,117 @@
+<!-- create-annoucement.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Formulaire d'Annonce</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="script/model.js"></script>
+    <script src="script/view.js"></script>
+    <script src="script/controller.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const model = new AnnouncementsModel();
+            const view = new AnnouncementsView('annonceForm');
+            const controller = new AnnouncementsController(model, view);
+        });
+    </script>
+    
+</head>
+<body>
+
+<div style="width: 100%; height: 100%; position: relative; background: white">
+    <div style="width: 512px; height: 100px; left: 0px; top: 1032px; position: absolute">
+        <!-- ...... -->
+    </div>
+    <div class="container form-container">
+        <h2>Créer une annonce</h2>
+        <form id="annonceForm">
+            <div class="form-group">
+                <button type="button" class="return-home"><i class="fas fa-home"></i></button>
+            </div>
+            <div class="form-group d-flex justify-content-center align-items-center">
+                <div class="ml-2">
+                    <img style="width: 436px; height: 199px; border-radius: 3px;" src="pic.jpeg" alt="Photo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" class="form-control" id="adresse" placeholder="Entrez votre adresse...">
+            </div>
+            <div class="form-group">
+                <label for="participants">Nombre de Participants</label>
+                <input type="number" class="form-control" id="participants" placeholder="Entrez le nombre de participants...">
+            </div>
+            <div class="form-group">
+                <label for="dateHeure">Date et Heure</label>
+                <input type="datetime-local" class="form-control" id="dateHeure" placeholder="Sélectionnez la date et l'heure...">
+            </div>
+            <div class="form-group">
+                <label for="sport">Sport</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success active" data-toggle="tooltip" data-placement="top" title="Football">
+                        <input type="radio" name="sport" id="football" autocomplete="off" checked><i class="fas fa-futbol"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Basketball">
+                        <input type="radio" name="sport" id="basketball" autocomplete="off"><i class="fas fa-basketball-ball"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Tennis de table">
+                        <input type="radio" name="sport" id="tennis-de-table" autocomplete="off"><i class="fas fa-table-tennis"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Volleyball">
+                        <input type="radio" name="sport" id="volleyball" autocomplete="off"><i class="fas fa-volleyball-ball"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Rugby">
+                        <input type="radio" name="sport" id="rugby" autocomplete="off"><i class="fas fa-football-ball"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Swimming">
+                        <input type="radio" name="sport" id="swimming" autocomplete="off"><i class="fas fa-swimmer"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Cycling">
+                        <input type="radio" name="sport" id="cycling" autocomplete="off"><i class="fas fa-bicycle"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Baseball">
+                        <input type="radio" name="sport" id="baseball" autocomplete="off"><i class="fas fa-baseball-ball"></i>
+                    </label>
+                    <label class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Golf">
+                        <input type="radio" name="sport" id="golf" autocomplete="off"><i class="fas fa-golf-ball"></i>
+                    </label>
+            
+                    <!-- -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Ajoutez une description..."></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-block" type="submit">Ajouter une Annonce</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="toolbar">
+    <button class="btn"><i class="fas fa-user"></i></button>
+    <button class="btn"><i class="fas fa-map-marker-alt"></i></button>
+    <button class="btn"><i class="fas fa-trophy"></i></button>
+    <button class="btn"><i class="fas fa-cog"></i></button>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- Your existing HTML code... -->
+
+
+
+</body>
+</html>
+
