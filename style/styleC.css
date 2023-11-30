@@ -1,0 +1,99 @@
+/* Ajouter une annonce button */
+button:nth-child(2) {
+    background: #88E33F;
+    color: black;
+}
+
+/* Titre de la page */
+h2 {
+    color: #88E33F;
+}
+
+/* Rectangle qui va contenir la liste des annonces */
+#announcementsList {
+    background: #D9D9D9;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Conteneur de la carte d'annonce */
+.card {
+    background: #88E33F;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* Style du bouton de retour à la page d'accueil */
+.return-home {
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Couleur de l'icône de retour à la page d'accueil */
+.return-home i {
+    color: #000000;
+}
+/* Barre de navigation */
+.container {
+    margin-top: 4rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.ml-3 {
+    margin-left: 0.75rem;
+}
+
+/* Bouton de retour à la page d'accueil */
+.return-home {
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 0.5rem;
+}
+
+/* Titre "Communauté" */
+h2 {
+    margin: 0; /* Supprime la marge par défaut du titre */
+}
+
+/* Bouton "Ajouter une annonce" */
+.add-announcement {
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Barre d'outils en bas de la page */
+.toolbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #528827; /* Vert foncé */
+    padding: 15px 0;
+}
+
+/* Style des boutons de la barre d'outils */
+.toolbar .btn {
+    background-color: #D9D9D9; /* Gris clair */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+/* Ajoutez ici les styles spécifiques aux icônes FontAwesome si nécessaire */
