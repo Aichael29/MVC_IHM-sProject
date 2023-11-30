@@ -41,7 +41,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-<!-- Your existing HTML code... -->
+
 
 <script>
     
@@ -75,7 +75,7 @@
         });
     });
 
-    // Function to handle participation
+
 // Function to handle participation
 function joinEvent(address) {
         // Retrieve stored announcements
@@ -93,7 +93,7 @@ function joinEvent(address) {
             // Update local storage
             localStorage.setItem('announcements', JSON.stringify(announcements));
 
-            // You may also want to update the UI to reflect the new participant count
+           
             updateAnnouncementUI();
         } else {
             console.error('Announcement not found:', address);
